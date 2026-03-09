@@ -57,4 +57,5 @@ The portfolio is deployed using Vercel.
 ## Contact
 
 Email: [jagrat.ahuja@live.com](mailto:jagrat.ahuja@live.com)
+
 GitHub: https://github.com/jagratahuja
