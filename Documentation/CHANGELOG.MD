@@ -191,3 +191,67 @@
 
 *Last Updated: March 29, 2026*
 *Status: Phase 1 Complete, User Approved, Ready for Commit*
+
+---
+
+## Phase 2: Proof & Signal (v2.0.0-alpha.2) (March 2026)
+
+### 2.1 Proof of Work Section Added
+- **New Section Component**: Added a dedicated "Proof of Work" section to highlight measurable public consistency.
+- **Homepage Integration**: Inserted section into homepage flow between Projects and Skills.
+- **Content Centralization**: Added dedicated content registry file for Phase 2 copy and metrics.
+- **Files Created**:
+  - `components/proof-of-work.tsx`
+  - `content/proof-of-work.ts`
+- **File Modified**:
+  - `app/page.tsx`
+
+### 2.1 Navigation Update
+- Added a new navbar link for in-page navigation to the Proof section (`#proof`).
+- **File Modified**:
+  - `components/navbar.tsx`
+
+### 2.1 Copy Refinements
+- Updated heading from "Consistency in Public" to **"Public Consistency"**.
+- Updated subtitle to:
+  - "A measurable signal of daily execution across repositories, commits, and system-level integration."
+- Added contextual data note:
+  - "Data below is as of 28 March 2026."
+- Updated CTA text:
+  - "View GitHub Activity" → **"View GitHub Profile"**
+- **File Modified**:
+  - `content/proof-of-work.ts`
+
+### 2.1 Contribution Timeline Accuracy Update
+- Replaced placeholder contribution bars with actual day-wise values from `Documentation/contribution_report.md` (March 7-28).
+- Updated timeline label to **"March 7-28, 2026 Contribution Rhythm"**.
+- Updated contribution total to **117 in 22 days**.
+- Implemented chart normalization logic so bars scale correctly to the real max value and do not overflow.
+- **Files Modified**:
+  - `content/proof-of-work.ts`
+  - `components/proof-of-work.tsx`
+
+### 2.2 Python Archive Highlight Upgrade
+- Upgraded Python Programs Archive card to feel like a core proof asset.
+- Added **"Proof Asset"** badge on archive card.
+- Added archive-specific explanatory line emphasizing progression and systems thinking.
+- Added archive-specific border accent styling to distinguish it from standard cards.
+- **File Modified**:
+  - `components/projects.tsx`
+
+### Documentation Path Alignment
+- Updated content documentation references after files were moved into `Documentation/`.
+- Changed changelog pointer in content index to `Documentation/CHANGELOG.MD`.
+- **File Modified**:
+  - `content/INDEX.md`
+
+### Validation
+- ✅ No TypeScript/runtime errors in all modified Phase 2 files.
+- ✅ Proof section renders with updated copy and date note.
+- ✅ Contribution graph now reflects provided day-wise dataset.
+- ✅ Navbar proof anchor link added and working.
+
+---
+
+*Last Updated: March 29, 2026*
+*Status: Phase 2 Implemented, Changelog Updated, Ready for Commit*

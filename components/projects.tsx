@@ -61,7 +61,13 @@ export function Projects() {
             >
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#3b82f6]/20 to-[#a855f7]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10" />
 
-              <div className="relative h-full p-6 rounded-2xl bg-gradient-to-br from-[#0d1424] to-[#0a0f1c] border border-[#1e3a5f]/50 group-hover:border-transparent transition-all duration-300 overflow-hidden flex flex-col">
+              <div
+                className={`relative h-full p-6 rounded-2xl bg-gradient-to-br from-[#0d1424] to-[#0a0f1c] border transition-all duration-300 overflow-hidden flex flex-col ${
+                  project.isArchive
+                    ? "border-[#f59e0b]/40 group-hover:border-[#f59e0b]/60"
+                    : "border-[#1e3a5f]/50 group-hover:border-transparent"
+                }`}
+              >
                 <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-br from-[#3b82f6]/60 to-[#a855f7]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10">
                   <div className="w-full h-full rounded-2xl bg-[#0a0f1c]" />
                 </div>
@@ -70,6 +76,11 @@ export function Projects() {
                   <span className="inline-flex px-3 py-1 text-xs rounded-full bg-gradient-to-r from-[#3b82f6]/20 to-[#a855f7]/20 border border-[#3b82f6]/30 text-[#00d4ff]">
                     Featured
                   </span>
+                  {project.isArchive && (
+                    <span className="inline-flex px-3 py-1 text-xs rounded-full bg-gradient-to-r from-[#f59e0b]/20 to-[#f97316]/20 border border-[#f59e0b]/40 text-[#fbbf24]">
+                      Proof Asset
+                    </span>
+                  )}
                   {toolProjectSlugs.has(project.slug) && (
                     <span className="inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full bg-gradient-to-r from-[#14b8a6]/20 to-[#3b82f6]/20 border border-[#14b8a6]/30 text-[#5eead4]">
                       <Wrench className="w-3 h-3" />
@@ -94,6 +105,13 @@ export function Projects() {
                 <p className="text-[#94a3b8] text-sm mb-4 leading-5 h-[60px] overflow-hidden">
                   {project.supportLine}
                 </p>
+
+                {project.isArchive && (
+                  <p className="text-xs text-[#fbbf24] mb-3 font-medium">
+                    Built as long-form proof of progression, consistency, and
+                    systems thinking.
+                  </p>
+                )}
 
                 <div className="flex flex-wrap content-start gap-2 mb-4 h-16 overflow-hidden">
                   {project.tech.map((tech) => (

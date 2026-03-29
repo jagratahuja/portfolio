@@ -3,6 +3,7 @@ import { Hero } from "@/components/hero";
 import { WhatIBuild } from "@/components/what-i-build";
 import { About } from "@/components/about";
 import { Projects } from "@/components/projects";
+import { ProofOfWork } from "@/components/proof-of-work";
 import { Skills } from "@/components/skills";
 import { Achievements } from "@/components/achievements";
 import { Contact } from "@/components/contact";
@@ -18,6 +19,7 @@ export default function Home() {
       <WhatIBuild />
       <About />
       <Projects />
+      <ProofOfWork />
       <Skills />
       <Achievements />
       <Contact />

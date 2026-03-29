@@ -6,6 +6,7 @@
  * - hero.ts: Hero section headline, CTAs, and featured skills
  * - what-i-build.ts: Project philosophy and systems-building approach
  * - about.ts: 4-part personal narrative and achievement highlights
+ * - proof-of-work.ts: public build metrics and consistency signals
  * - skills.ts: Technical skills organized by category
  * - achievements.ts: Awards, recognitions, and milestones
  * - projects.ts: All project descriptions, tech stacks, and metadata
@@ -111,7 +112,7 @@
  * - Update tech stacks regularly as new tools are added
  * - When adding new projects, update both featured/tools lists AND toolProjectSlugs
  * - Preserve color harmony across all sections
- * - Document any content changes in CHANGELOG.MD
+ * - Document any content changes in Documentation/CHANGELOG.MD
  * - Test component rendering after content updates
  * 
  * Component Dependencies:
@@ -119,6 +120,7 @@
  * hero.ts → components/hero.tsx
  * what-i-build.ts → components/what-i-build.tsx
  * about.ts → components/about.tsx
+ * proof-of-work.ts → components/proof-of-work.tsx
  * skills.ts → components/skills.tsx
  * achievements.ts → components/achievements.tsx
  * projects.ts → components/projects.tsx + app/projects/page.tsx + lib/projects-data.ts
