@@ -12,6 +12,8 @@ const skills = [
   { name: "Tkinter", color: "#A855F7" },
 ];
 
+const formatCoordinate = (value: number) => value.toFixed(3);
+
 export function Hero() {
   const [isHovered, setIsHovered] = useState(false);
   const orbitRadius = 160;
@@ -43,7 +45,7 @@ export function Hero() {
               transition={{ delay: 0.2, duration: 0.6 }}
             >
               <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#3b82f6]/20 to-[#a855f7]/20 border border-[#3b82f6]/30 text-sm text-[#00d4ff] mb-6">
-                Student Developer
+                System Builder
               </span>
             </motion.div>
 
@@ -53,7 +55,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
             >
-              <span className="bg-gradient-to-r from-[#f0f4ff] via-[#00d4ff] to-[#a855f7] bg-clip-text text-transparent animate-gradient">
+              <span className="bg-gradient-to-r from-[#3b82f6] to-[#a855f7] bg-clip-text text-transparent">
                 Jagrat Ahuja
               </span>
             </motion.h1>
@@ -64,7 +66,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
             >
-              Student developer focused on productivity systems and educational tools.
+              System builder designing productivity and learning tools that help users understand, optimize, and improve how they work.
             </motion.p>
 
             <motion.p
@@ -73,7 +75,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.6 }}
             >
-              Building practical software solutions with 100+ Python programs and growing.
+              Building systems and tools with 200+ Python programs and multiple production-ready web applications.
             </motion.p>
 
             <motion.div
@@ -137,6 +139,9 @@ export function Hero() {
                   const radians = (angle * Math.PI) / 180;
                   const x = Math.cos(radians) * orbitRadius;
                   const y = Math.sin(radians) * orbitRadius;
+                  const orbitTransform = `translate(-50%, -50%) translate(${formatCoordinate(
+                    x
+                  )}px, ${formatCoordinate(y)}px)`;
                   
                   return (
                     <motion.div
@@ -145,7 +150,7 @@ export function Hero() {
                       style={{
                         left: "50%",
                         top: "50%",
-                        transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
+                        transform: orbitTransform,
                       }}
                       animate={{ rotate: -360 }}
                       transition={{

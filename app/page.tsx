@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar";
 import { Hero } from "@/components/hero";
+import { WhatIBuild } from "@/components/what-i-build";
 import { About } from "@/components/about";
 import { Projects } from "@/components/projects";
 import { Skills } from "@/components/skills";
@@ -14,6 +15,7 @@ export default function Home() {
       <AnimatedBackground />
       <Navbar />
       <Hero />
+      <WhatIBuild />
       <About />
       <Projects />
       <Skills />

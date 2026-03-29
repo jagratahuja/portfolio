@@ -87,7 +87,7 @@ export function Footer() {
             Built with <Heart className="w-4 h-4 text-[#ec4899]" /> by Jagrat Ahuja
           </p>
           <p className="text-xs text-[#475569] mt-2">
-            © {new Date().getFullYear()} All rights reserved.
+            © <span suppressHydrationWarning>{new Date().getFullYear()}</span> All rights reserved.
           </p>
         </motion.div>
       </div>

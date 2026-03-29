@@ -8,23 +8,23 @@ import { Code, Lightbulb, GraduationCap, Rocket } from "lucide-react";
 const highlights = [
   {
     icon: Code,
-    title: "100+ Programs",
-    description: "Python projects built and counting",
+    title: "200+ Python Programs",
+    description: "Built across logic, automation, and learning tools",
   },
   {
     icon: Lightbulb,
-    title: "Problem Solver",
-    description: "Creating practical software solutions",
-  },
-  {
-    icon: GraduationCap,
-    title: "Class 11 CBSE",
-    description: "Focused on CS and Mathematics",
+    title: "Systems Builder",
+    description: "Designing practical systems with measurable outcomes",
   },
   {
     icon: Rocket,
-    title: "Self-Taught",
-    description: "Started coding during COVID",
+    title: "Systems and Tools Built",
+    description: "Production-ready apps and systems shipped",
+  },
+  {
+    icon: GraduationCap,
+    title: "Class 12 CBSE",
+    description: "Focused on CS, systems thinking, and consistency",
   },
 ];
 
@@ -46,8 +46,8 @@ export function About() {
             About Me
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">
-            <span className="bg-gradient-to-r from-[#f0f4ff] to-[#00d4ff] bg-clip-text text-transparent">
-              Building the Future
+            <span className="bg-gradient-to-r from-[#3b82f6] to-[#a855f7] bg-clip-text text-transparent">
+              The Builder Behind the Systems
             </span>
           </h2>
         </motion.div>
@@ -59,29 +59,50 @@ export function About() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-lg text-[#94a3b8] mb-6 leading-relaxed">
-              I&apos;m a{" "}
-              <span className="text-[#00d4ff]">Class 11 CBSE student</span>{" "}
-              passionate about computer science and mathematics. My journey into
-              programming began during the COVID period, and since then, I&apos;ve been
-              building tools that improve efficiency and solve real problems.
-            </p>
-            <p className="text-lg text-[#94a3b8] mb-6 leading-relaxed">
-              I specialize in designing systems that make a difference,
-              particularly in{" "}
-              <span className="text-[#a855f7]">education</span> and{" "}
-              <span className="text-[#14b8a6]">productivity</span>. From
-              educational games to study analysis tools, I believe in creating
-              software that has real-world impact.
-            </p>
-            <p className="text-lg text-[#94a3b8] leading-relaxed">
-              With over{" "}
-              <span className="text-[#3b82f6] font-semibold">
-                100 Python programs
-              </span>{" "}
-              under my belt, I continue to explore new technologies and
-              challenge myself with increasingly complex projects.
-            </p>
+            <div className="space-y-6">
+              <div>
+                <p className="text-sm font-semibold text-[#00d4ff] uppercase tracking-wide mb-2">
+                  1. Who I Am
+                </p>
+                <p className="text-lg text-[#94a3b8] leading-relaxed">
+                  I&apos;m a <span className="text-[#00d4ff]">Class 12 CBSE student</span>{" "}
+                  focused on building practical systems, not just one-off projects.
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm font-semibold text-[#00d4ff] uppercase tracking-wide mb-2">
+                  2. What I Build
+                </p>
+                <p className="text-lg text-[#94a3b8] leading-relaxed">
+                  I design tools centered on <span className="text-[#a855f7]">productivity</span>,
+                  <span className="text-[#14b8a6]"> learning</span>, and system-driven improvement
+                  for students who want clearer workflows and better outcomes.
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm font-semibold text-[#00d4ff] uppercase tracking-wide mb-2">
+                  3. Evolution
+                </p>
+                <p className="text-lg text-[#94a3b8] leading-relaxed">
+                  I started coding during COVID in my sixth class with Python, then
+                  expanded into full-stack web development using React, Next.js, and
+                  Tailwind to build more scalable systems.
+                </p>
+              </div>
+
+              <div>
+                <p className="text-sm font-semibold text-[#00d4ff] uppercase tracking-wide mb-2">
+                  4. Proof
+                </p>
+                <p className="text-lg text-[#94a3b8] leading-relaxed">
+                  So far, I&apos;ve built <span className="text-[#3b82f6] font-semibold">200+ Python programs</span>,
+                  shipped <span className="text-[#3b82f6] font-semibold">4 tools</span>, and developed
+                  <span className="text-[#3b82f6] font-semibold"> 1 major system</span>: StudyOS.
+                </p>
+              </div>
+            </div>
           </motion.div>
 
           {/* Highlight cards */}

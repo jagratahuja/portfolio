@@ -1,12 +1,7 @@
-"use client";
-
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import { ExternalLink, FileText, Github, Wrench } from "lucide-react";
 import Link from "next/link";
-import { projectsData } from "@/lib/projects-data";
+import { projectsData, futureTools } from "@/lib/projects-data";
+import { ExternalLink, FileText, Github, ArrowLeft, Wrench } from "lucide-react";
 
-const featuredProjects = projectsData.filter((project) => project.featured);
 const toolProjectSlugs = new Set([
   "timescope",
   "decision-maker",
@@ -15,61 +10,65 @@ const toolProjectSlugs = new Set([
   "habit-tracker",
 ]);
 
-export function Projects() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 });
+function getCenteredGridClass(index: number, total: number) {
+  const remainder = total % 3;
+  const lastRowStart = total - remainder;
 
+  if (remainder === 1 && index === total - 1) {
+    return "xl:col-start-3";
+  }
+
+  if (remainder === 2 && index >= lastRowStart) {
+    return index === lastRowStart ? "xl:col-start-2" : "xl:col-start-4";
+  }
+
+  return "";
+}
+
+export default function ProjectsPage() {
   return (
-    <section id="projects" className="relative py-24 px-4">
-      <div className="max-w-6xl mx-auto" ref={ref}>
-        {/* Section header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
+    <main className="relative min-h-screen px-4 py-24">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-12">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm text-[#94a3b8] hover:text-[#00d4ff] transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            Back to Home
+          </Link>
+        </div>
+
+        <section className="mb-16 text-center">
           <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#3b82f6]/20 to-[#a855f7]/20 border border-[#3b82f6]/30 text-sm text-[#00d4ff] mb-4">
-            Featured Work
+            Full Project Library
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">
             <span className="bg-gradient-to-r from-[#3b82f6] to-[#a855f7] bg-clip-text text-transparent">
-              Projects
+              All Projects
             </span>
-          </h2>
-          <p className="text-[#94a3b8] max-w-2xl mx-auto">
-            A collection of projects showcasing my skills in building practical
-            tools and applications.
+          </h1>
+          <p className="text-[#94a3b8] max-w-3xl mx-auto">
+            A complete view of shipped tools and systems, with links to source
+            code and live demos where available.
           </p>
-        </motion.div>
+        </section>
 
-        {/* Project cards */}
-        <div className="grid md:grid-cols-2 xl:grid-cols-6 gap-6">
-          {featuredProjects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 40 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.15 }}
-              className={`group relative xl:col-span-2 ${
-                index === 3
-                  ? "xl:col-start-2"
-                  : index === 4
-                    ? "xl:col-start-4"
-                    : ""
-              }`}
+        <section className="grid md:grid-cols-2 xl:grid-cols-6 gap-6 mb-20">
+          {projectsData.map((project, index) => (
+            <article
+              key={project.slug}
+              className={`group relative h-full p-6 rounded-2xl bg-gradient-to-br from-[#0d1424] to-[#0a0f1c] border border-[#1e3a5f]/50 hover:border-[#3b82f6]/50 transition-all duration-300 overflow-hidden xl:col-span-2 ${getCenteredGridClass(index, projectsData.length)}`}
             >
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#3b82f6]/20 to-[#a855f7]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl -z-10" />
+              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-[#3b82f6]/5 to-[#a855f7]/5" />
 
-              <div className="relative h-full p-6 rounded-2xl bg-gradient-to-br from-[#0d1424] to-[#0a0f1c] border border-[#1e3a5f]/50 group-hover:border-transparent transition-all duration-300 overflow-hidden flex flex-col">
-                <div className="absolute inset-0 rounded-2xl p-[1px] bg-gradient-to-br from-[#3b82f6]/60 to-[#a855f7]/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10">
-                  <div className="w-full h-full rounded-2xl bg-[#0a0f1c]" />
-                </div>
-
+              <div className="relative flex flex-col h-full">
                 <div className="min-h-8 mb-4 flex items-center gap-2">
-                  <span className="inline-flex px-3 py-1 text-xs rounded-full bg-gradient-to-r from-[#3b82f6]/20 to-[#a855f7]/20 border border-[#3b82f6]/30 text-[#00d4ff]">
-                    Featured
-                  </span>
+                  {project.featured && (
+                    <span className="inline-flex px-3 py-1 text-xs rounded-full bg-gradient-to-r from-[#3b82f6]/20 to-[#a855f7]/20 border border-[#3b82f6]/30 text-[#00d4ff]">
+                      Featured
+                    </span>
+                  )}
                   {toolProjectSlugs.has(project.slug) && (
                     <span className="inline-flex items-center gap-1 px-3 py-1 text-xs rounded-full bg-gradient-to-r from-[#14b8a6]/20 to-[#3b82f6]/20 border border-[#14b8a6]/30 text-[#5eead4]">
                       <Wrench className="w-3 h-3" />
@@ -84,14 +83,13 @@ export function Projects() {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-[#f0f4ff] mb-2 font-[family-name:var(--font-space-grotesk)] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#3b82f6] group-hover:to-[#a855f7] transition-all duration-300">
+                <h2 className="text-xl font-bold text-[#f0f4ff] mb-2 font-[family-name:var(--font-space-grotesk)]">
                   {project.title}
-                </h3>
-
-                <p className="text-[#cbd5e1] text-sm mb-2 leading-5 h-[60px] overflow-hidden font-medium">
+                </h2>
+                <p className="text-[#cbd5e1] text-sm mb-2 leading-5 h-10 overflow-hidden font-medium">
                   {project.positioningLine}
                 </p>
-                <p className="text-[#94a3b8] text-sm mb-4 leading-5 h-[60px] overflow-hidden">
+                <p className="text-[#94a3b8] text-sm mb-4 leading-5 h-10 overflow-hidden">
                   {project.supportLine}
                 </p>
 
@@ -167,24 +165,39 @@ export function Projects() {
                   )}
                 </div>
               </div>
-            </motion.div>
+            </article>
           ))}
-        </div>
+        </section>
 
-        <motion.div
-          className="mt-10 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.6 }}
-        >
-          <Link
-            href="/projects"
-            className="group inline-flex items-center gap-3 px-8 py-4 text-base font-medium text-white rounded-xl bg-gradient-to-r from-[#3b82f6] to-[#a855f7] hover:from-[#a855f7] hover:to-[#3b82f6] transition-all duration-300 shadow-lg shadow-[#3b82f6]/25 hover:shadow-[#a855f7]/25"
-          >
-            <span>See what all I have built</span>
-          </Link>
-        </motion.div>
+        <section>
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-3 font-[family-name:var(--font-space-grotesk)]">
+              <span className="bg-gradient-to-r from-[#3b82f6] to-[#a855f7] bg-clip-text text-transparent">
+                Future Projects
+              </span>
+            </h2>
+            <p className="text-[#94a3b8]">Systems and tools currently in development.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-6 gap-6">
+            {futureTools.map((tool, index) => (
+              <article
+                key={tool.name}
+                className={`p-6 rounded-2xl bg-gradient-to-br from-[#0d1424] to-[#0a0f1c] border border-[#1e3a5f]/50 xl:col-span-2 ${
+                  getCenteredGridClass(index, futureTools.length)
+                }`}
+              >
+                <h3 className="text-lg font-semibold text-[#f0f4ff] mb-2">
+                  {tool.name}
+                </h3>
+                <p className="text-[#94a3b8] text-sm leading-relaxed">
+                  {tool.purpose}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
       </div>
-    </section>
+    </main>
   );
 }

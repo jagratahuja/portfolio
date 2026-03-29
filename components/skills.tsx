@@ -39,7 +39,7 @@ export function Skills() {
             Technical Skills
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">
-            <span className="bg-gradient-to-r from-[#f0f4ff] via-[#a855f7] to-[#14b8a6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#3b82f6] to-[#a855f7] bg-clip-text text-transparent">
               Skills & Technologies
             </span>
           </h2>
