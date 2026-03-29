@@ -255,3 +255,36 @@
 
 *Last Updated: March 29, 2026*
 *Status: Phase 2 Implemented, Changelog Updated, Ready for Commit*
+
+---
+
+## Phase 4: Skills Rework (v2.0.0-alpha.4) (March 2026)
+
+### 4.1 Skills Taxonomy Reworked
+- Replaced the previous unified/earlier grouping with the finalized 6-part structure:
+  - **Core**: Python, TypeScript, C#
+  - **Frontend**: React, Next.js, Tailwind CSS, HTML, CSS, Recharts, Lucide React, WebGL
+  - **Backend**: Node.js
+  - **Storage**: localStorage, Supabase
+  - **Deployment**: Vercel, Itch.io, Unity
+  - **Others**: Adobe Photoshop, Adobe Premiere Pro, Adobe After Effects
+- Updated section subtitle to reflect separated stack layers for better scanability.
+
+### Content + Component Alignment
+- Kept Skills content centralized in `content/skills.ts`.
+- Updated `components/skills.tsx` to consume centralized content directly instead of a local hardcoded array.
+- Enforced a minimum skill-chip area height so short categories in the bottom row visually match scale with other cards.
+
+### Files Modified
+- `content/skills.ts`
+- `components/skills.tsx`
+
+### Validation
+- ✅ Skills section now reflects the finalized 6-category model.
+- ✅ Bottom-row card content area now maintains consistent visual height.
+- ✅ No runtime/type errors in modified files.
+
+---
+
+*Last Updated: March 29, 2026*
+*Status: Phase 4 Skills Rework Finalized, Ready for Commit*

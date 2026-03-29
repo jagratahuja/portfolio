@@ -2,24 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-
-const skillCategories = [
-  {
-    title: "Programming",
-    color: "#3b82f6",
-    skills: ["Python", "C#", "Java"],
-  },
-  {
-    title: "Libraries",
-    color: "#a855f7",
-    skills: ["Tkinter", "Pygame", "Turtle"],
-  },
-  {
-    title: "Tools",
-    color: "#14b8a6",
-    skills: ["VS Code", "Visual Studio", "Unity Engine", "Replit"],
-  },
-];
+import { skillsContent } from "@/content/skills";
 
 export function Skills() {
   const ref = useRef(null);
@@ -36,21 +19,27 @@ export function Skills() {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#3b82f6]/20 to-[#a855f7]/20 border border-[#3b82f6]/30 text-sm text-[#00d4ff] mb-4">
-            Technical Skills
+            {skillsContent.badge}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">
             <span className="bg-gradient-to-r from-[#3b82f6] to-[#a855f7] bg-clip-text text-transparent">
-              Skills & Technologies
+              {skillsContent.heading}
             </span>
           </h2>
           <p className="text-[#94a3b8] max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life.
+            {skillsContent.subtitle}
           </p>
         </motion.div>
 
         {/* Skills grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
+        <div
+          className={`grid gap-8 ${
+            skillsContent.categories.length === 1
+              ? "max-w-4xl mx-auto"
+              : "md:grid-cols-3"
+          }`}
+        >
+          {skillsContent.categories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
               initial={{ opacity: 0, y: 40 }}
@@ -74,7 +63,7 @@ export function Skills() {
                 </div>
 
                 {/* Skills */}
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap content-start gap-3 min-h-[132px]">
                   {category.skills.map((skill, skillIndex) => (
                     <motion.div
                       key={skill}

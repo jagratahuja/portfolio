@@ -1,27 +1,55 @@
 /**
  * Skills & Technologies Section Content
- * Organized by category with specific technologies
+ * Consolidated from project documentation into one unified stack
  */
 
 export const skillsContent = {
   badge: "Technical Skills",
   heading: "Skills & Technologies",
-  subtitle: "Technologies and tools I use to bring ideas to life.",
+  subtitle: "A separated stack view across product, system, and delivery layers.",
   categories: [
     {
-      title: "Programming",
+      title: "Core",
       color: "#3b82f6",
-      skills: ["Python", "C#", "Java"],
+      skills: ["Python", "TypeScript", "C#"],
     },
     {
-      title: "Libraries",
+      title: "Frontend",
       color: "#a855f7",
-      skills: ["Tkinter", "Pygame", "Turtle"],
+      skills: [
+        "React",
+        "Next.js",
+        "Tailwind CSS",
+        "HTML",
+        "CSS",
+        "Recharts",
+        "Lucide React",
+        "WebGL",
+      ],
     },
     {
-      title: "Tools",
+      title: "Backend",
       color: "#14b8a6",
-      skills: ["VS Code", "Visual Studio", "Unity Engine", "Replit"],
+      skills: ["Node.js"],
+    },
+    {
+      title: "Storage",
+      color: "#22c55e",
+      skills: ["localStorage", "Supabase"],
+    },
+    {
+      title: "Deployment",
+      color: "#f59e0b",
+      skills: ["Vercel", "Itch.io", "Unity"],
+    },
+    {
+      title: "Others",
+      color: "#f97316",
+      skills: [
+        "Adobe Photoshop",
+        "Adobe Premiere Pro",
+        "Adobe After Effects",
+      ],
     },
   ],
 };
