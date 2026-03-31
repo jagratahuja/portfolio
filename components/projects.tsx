@@ -151,7 +151,7 @@ export function Projects() {
                           className="flex items-center gap-2 text-sm text-[#64748b] hover:text-[#00d4ff] transition-colors"
                         >
                           <Github className="w-4 h-4" />
-                          <span>Source Code</span>
+                          <span>View My Code</span>
                         </a>
                       )}
                       {project.summaryUrl && (
@@ -199,7 +199,7 @@ export function Projects() {
             href="/projects"
             className="group inline-flex items-center gap-3 px-8 py-4 text-base font-medium text-white rounded-xl bg-gradient-to-r from-[#3b82f6] to-[#a855f7] hover:from-[#a855f7] hover:to-[#3b82f6] transition-all duration-300 shadow-lg shadow-[#3b82f6]/25 hover:shadow-[#a855f7]/25"
           >
-            <span>See what all I have built</span>
+            <span>Explore My Work</span>
           </Link>
         </motion.div>
       </div>

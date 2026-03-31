@@ -92,7 +92,7 @@ export function Hero() {
                 <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-[#a855f7] to-[#3b82f6]" />
                 <span className="absolute inset-0 opacity-0 group-hover:opacity-50 transition-opacity duration-300 shadow-[0_0_30px_10px_rgba(59,130,246,0.5)]" />
                 <span className="relative flex items-center gap-2">
-                  View Projects
+                  Explore My Work
                   <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
                 </span>
               </a>
@@ -106,7 +106,7 @@ export function Hero() {
                 <span className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r from-[#3b82f6]/10 to-[#a855f7]/10" />
                 <span className="relative flex items-center gap-2 text-[#f0f4ff]">
                   <Github className="w-5 h-5" />
-                  GitHub Profile
+                  View My Code
                 </span>
               </a>
             </motion.div>

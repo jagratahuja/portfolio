@@ -131,7 +131,7 @@ export default function ProjectsPage() {
                           className="flex items-center gap-2 text-sm text-[#64748b] hover:text-[#00d4ff] transition-colors"
                         >
                           <Github className="w-4 h-4" />
-                          <span>Source Code</span>
+                          <span>View My Code</span>
                         </a>
                       )}
                       {project.summaryUrl && (
