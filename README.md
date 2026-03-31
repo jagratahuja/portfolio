@@ -6,7 +6,7 @@ A systems-focused personal portfolio showcasing productivity tools, learning pro
 
 ## 🌐 Live Demo
 
-to be added
+https://jagratahuja.vercel.app/
 
 ---
 
@@ -113,7 +113,7 @@ This project demonstrates:
 
 ## 🔢 Version
 
-Current Version: v2.0.0-rc
+Current Version: v2.0.0-stable
 
 Version Notes:
 
@@ -156,6 +156,10 @@ v2.0.0-beta.1
 v2.0.0-rc
 - Release candidate.
 - Pre-launch validation and deployment readiness checkpoint.
+
+v2.0.0-stable
+- Stable release.
+- Deployed on Vercel with live portfolio URL: https://jagratahuja.vercel.app/
 
 ---
 
