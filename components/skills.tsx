@@ -6,7 +6,7 @@ import { skillsContent } from "@/content/skills";
 
 export function Skills() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
     <section id="skills" className="relative py-24 px-4">

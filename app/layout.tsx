@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { ScrollToTopOnLoad } from '@/components/scroll-to-top-on-load'
 import './globals.css'
 
 const inter = Inter({ 
@@ -32,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="font-sans antialiased bg-[#0a0f1c] text-[#f0f4ff] overflow-x-hidden">
+        <ScrollToTopOnLoad />
         {children}
         <Analytics />
       </body>

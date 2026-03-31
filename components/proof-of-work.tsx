@@ -9,7 +9,7 @@ const statIcons = [Activity, CalendarDays, FolderGit2];
 
 export function ProofOfWork() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   const maxTimelineValue = Math.max(...proofOfWorkContent.timelineBars);
 
   return (

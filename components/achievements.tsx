@@ -27,7 +27,7 @@ const iconMap = {
 
 export function Achievements() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
     <section id="achievements" className="relative py-24 px-4">

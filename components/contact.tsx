@@ -6,7 +6,7 @@ import { Mail, Github, ArrowUpRight, Send } from "lucide-react";
 
 export function Contact() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
   const formEndpoint = "https://formspree.io/f/mvzvrajw";
   const [formData, setFormData] = useState({
     name: "",

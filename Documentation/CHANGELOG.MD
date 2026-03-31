@@ -391,3 +391,77 @@
 
 *Last Updated: March 31, 2026*
 *Status: Phase 6 Contact System Implemented, Ready for Publish*
+
+---
+
+## Phase 7: UI/UX Improvements (v2.0.0-alpha.7) (March 2026)
+
+### 7.1 Full Width Layout and Spacing Expansion
+- Expanded major section containers to reduce compressed layout feel and improve visual breathing room.
+- Increased navbar layout width and horizontal padding for better edge-to-edge balance.
+- Matched footer container width and separator behavior with the wider site layout.
+
+### 7.2 Hover Glitch Fix (Projects)
+- Removed unstable title hover behavior that caused fast-hover flicker/temporary invisibility.
+- Replaced with stable color-only hover transition to preserve readability during rapid cursor movement.
+
+### 7.3 Header and Footer Alignment Refinements
+- Updated header alignment so JA anchors left, centered nav links remain visually balanced, and CTA anchors right.
+- Refined footer top row alignment (JA, redirect links, social icons) for consistent vertical centering.
+- Reduced footer vertical spacing between navigation row and copyright row.
+- Restored GitHub + Email icons on footer right.
+
+### Files Modified
+- app/contact/page.tsx
+- components/about.tsx
+- components/achievements.tsx
+- components/contact.tsx
+- components/footer.tsx
+- components/navbar.tsx
+- components/projects.tsx
+- components/proof-of-work.tsx
+- components/skills.tsx
+- components/what-i-build.tsx
+
+### Validation
+- ✅ No runtime/type errors in modified files.
+- ✅ Project title hover flicker resolved.
+- ✅ Header/footer alignment updated per review feedback.
+
+---
+
+*Last Updated: March 31, 2026*
+*Status: Phase 7 UI/UX Improvements Published (v2.0.0-alpha.7)*
+
+---
+
+## Phase 10: Animation Key Work (v2.0.0-beta.1) (March 2026)
+
+### 10.1 One-Time Section Reveal Behavior
+- Updated section in-view animations to trigger once per page load.
+- Prevented replay when scrolling back up/down through already-revealed sections.
+
+### 10.2 Refresh Scroll Behavior
+- Implemented global top-on-load behavior so refresh starts at the top of the page.
+- Disabled browser automatic restoration behavior via history control for consistent UX.
+
+### Files Modified
+- `app/layout.tsx`
+- `components/about.tsx`
+- `components/achievements.tsx`
+- `components/contact.tsx`
+- `components/projects.tsx`
+- `components/proof-of-work.tsx`
+- `components/skills.tsx`
+- `components/what-i-build.tsx`
+- `components/scroll-to-top-on-load.tsx`
+
+### Validation
+- ✅ No runtime/type errors in all modified files.
+- ✅ Section animations now reveal once and do not replay on upward scroll.
+- ✅ Refresh consistently lands at top of page.
+
+---
+
+*Last Updated: March 31, 2026*
+*Status: Phase 10 Animation Key Work Implemented, Ready for Review*

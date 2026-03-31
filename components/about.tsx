@@ -30,7 +30,7 @@ const highlights = [
 
 export function About() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
     <section id="about" className="relative py-24 px-4">

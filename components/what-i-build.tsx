@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 export function WhatIBuild() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.5 });
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
     <section id="what-i-build" className="relative py-16 px-4">

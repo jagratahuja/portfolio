@@ -18,9 +18,9 @@ Build a **high-signal, product-level portfolio** that positions you as a **syste
 ## 🗂️ Versioning (Release Tags)
 
 - **v1.0.0 (March 8, 2026)**: Initial website (initial commit).
-- **v2.0.0-alpha.1 → v2.0.0-alpha.9**: Phases **1 → 9** (one alpha per phase).
-- **v2.0.0-beta.1**: Phase **10** (Final Polish).
-- **v2.0.0-beta.2**: Phase **11** (Testing).
+- **v2.0.0-alpha.1 → v2.0.0-alpha.8**: Phases **1 → 8** (one alpha per phase).
+- **v2.0.0-beta.1**: Phase **10** (Animation Rework).
+- **v2.0.0-beta.2**: Phase **11** (Final Polish + Testing).
 - **v2.0.0-rc**: Phase **12** (Launch / Release Candidate).
 - **v2.0.0-stable**: Final release after the RC checklist passes.
 
@@ -281,50 +281,50 @@ Python Archive:
 
 ---
 
-# 🧭 PHASE 9 — INDIVIDUAL PROJECT ROUTES (Optional) — v2.0.0-alpha.9
+# 🎬 PHASE 10 — ANIMATION KEY WORK — v2.0.0-beta.1
 
-## 9.1 Individual Project Routes
+## 10.1 Animation Rework
 
-Future-ready structure:
-- /projects/studyos
-- /projects/decision-maker
+- Fix animation glitches and visual inconsistency across sections
+- Standardize reveal/hover transition timing
+- Smooth section entry and interaction motion
 
-(Not mandatory for v2 launch)
+## 10.2 Animation Consistency Pass
+
+- Align motion behavior across navbar, project cards, and section headers
+- Remove flicker-prone transitions and unstable hover states
+- Keep motion subtle, stable, and performant
 
 ---
 
-# 🚀 PHASE 10 — FINAL POLISH — v2.0.0-beta.1
+# 🚀 PHASE 11 — FINAL POLISH + TESTING — v2.0.0-beta.2
 
-## 10.1 Microcopy Improvements
+## 11.1 Microcopy Improvements
 
 Replace:
 - "View Projects" → "Explore My Work"
 - "GitHub" → "View My Code"
 
-## 10.2 Consistency Check
+## 11.2 Consistency Check
 
 - Fonts
 - Spacing
 - Colors
 - Button styles
 
----
-
-# 🧪 PHASE 11 — TESTING — v2.0.0-beta.2
-
-## 11.1 Functional Testing
+## 11.3 Functional Testing
 
 - All links
 - All buttons
 - Forms
 
-## 11.2 Responsive Testing
+## 11.4 Responsive Testing
 
 - Mobile
 - Tablet
 - Desktop
 
-## 11.3 Performance
+## 11.5 Performance
 
 - Optimize load time
 
@@ -334,9 +334,9 @@ Replace:
 
 ## 12.0 Versioning Format (This Plan)
 
-- Phases **1–9**: `v2.0.0-alpha.X`
-- Phase **10**: `v2.0.0-beta.1`
-- Phase **11**: `v2.0.0-beta.2`
+- Phases **1–8**: `v2.0.0-alpha.X`
+- Phase **10**: `v2.0.0-beta.1` (Animation Rework)
+- Phase **11**: `v2.0.0-beta.2` (Final Polish + Testing)
 - Phase **12**: `v2.0.0-rc`
 - After Phase 12 passes: `v2.0.0-stable`
 
@@ -365,6 +365,7 @@ Replace:
 - Backend integrations
 - Sort certificates by priority
 - Replace direct certificate-only viewing with a dedicated webpage that integrates and presents certificates
+- Individual project routes (optional): /projects/studyos, /projects/decision-maker
 
 ---
 
