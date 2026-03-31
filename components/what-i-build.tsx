@@ -9,7 +9,7 @@ export function WhatIBuild() {
 
   return (
     <section id="what-i-build" className="relative py-16 px-4">
-      <div className="max-w-6xl mx-auto" ref={ref}>
+      <div className="max-w-7xl mx-auto" ref={ref}>
         <motion.div
           className="text-center"
           initial={{ opacity: 0, y: 30 }}

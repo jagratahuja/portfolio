@@ -39,8 +39,8 @@ export function Navbar() {
         style={{ opacity: backgroundOpacity }}
       />
 
-      <nav className="relative max-w-6xl mx-auto px-4 py-4">
-        <div className="flex items-center justify-between">
+      <nav className="relative w-full px-4 md:px-8 lg:px-12 h-20 flex items-center">
+        <div className="flex items-center justify-between w-full">
           {/* Logo */}
           <a
             href="#"
@@ -50,12 +50,12 @@ export function Navbar() {
           </a>
 
           {/* Desktop navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8 mx-auto">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm text-[#94a3b8] hover:text-[#f0f4ff] transition-colors relative group"
+                className="inline-flex items-center h-10 text-sm leading-none text-[#94a3b8] hover:text-[#f0f4ff] transition-colors relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#3b82f6] to-[#a855f7] group-hover:w-full transition-all duration-300" />

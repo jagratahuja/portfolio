@@ -21,7 +21,7 @@ export function Projects() {
 
   return (
     <section id="projects" className="relative py-24 px-4">
-      <div className="max-w-6xl mx-auto" ref={ref}>
+      <div className="max-w-7xl mx-auto" ref={ref}>
         {/* Section header */}
         <motion.div
           className="text-center mb-16"
@@ -95,7 +95,7 @@ export function Projects() {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold text-[#f0f4ff] mb-2 font-[family-name:var(--font-space-grotesk)] group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#3b82f6] group-hover:to-[#a855f7] transition-all duration-300">
+                <h3 className="text-xl font-bold text-[#f0f4ff] mb-2 font-[family-name:var(--font-space-grotesk)] group-hover:text-[#dbeafe] transition-colors duration-200">
                   {project.title}
                 </h3>
 

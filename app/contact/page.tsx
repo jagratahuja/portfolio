@@ -74,7 +74,7 @@ export default function ContactPage() {
 
   return (
     <main className="relative min-h-screen px-4 py-24">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="mb-12">
           <Link
             href="/"
