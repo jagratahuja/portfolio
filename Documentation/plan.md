@@ -224,6 +224,11 @@ Instead of categories like "Languages", use:
 
 Rename "Featured" → "Highlights"
 
+## 5.3 Certificate Asset Note (Current)
+
+- Raw consolidated certificates PDF has been updated now.
+- PDF sorting by priority is planned for the next version.
+
 ---
 
 # 💬 PHASE 6 — CONTACT SYSTEM — v2.0.0-alpha.6

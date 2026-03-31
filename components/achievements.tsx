@@ -2,65 +2,28 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Trophy, Medal, Award, Star, Newspaper, Crown, Mic } from "lucide-react";
+import {
+  Trophy,
+  Medal,
+  Award,
+  Star,
+  Newspaper,
+  Crown,
+  Mic,
+  ExternalLink,
+  FileText,
+} from "lucide-react";
+import { achievementsContent } from "@/content/achievements";
 
-const achievements = [
-  {
-    icon: Trophy,
-    title: "Times of India NIE – 18 Under 18 Nomination",
-    description: "Nominated in Tech and Innovation Star Category by Shah International School",
-    color: "#fbbf24",
-    highlight: true,
-  },
-  {
-    icon: Medal,
-    title: "3rd Rank – Spectrum Maths Fest",
-    description: "Interschool Mathematics Competition",
-    color: "#3b82f6",
-  },
-  {
-    icon: Medal,
-    title: "3rd Rank – Pi-Fest Mathematics Competition",
-    description: "Bosco School",
-    color: "#a855f7",
-  },
-  {
-    icon: Award,
-    title: "3rd Rank – Mathematics Competition",
-    description: "Doon Public School – ₹1000 Cash Prize",
-    color: "#14b8a6",
-  },
-  {
-    icon: Star,
-    title: "CBSE Science Exhibition Participant",
-    description: "Paper from Grass project",
-    color: "#00d4ff",
-  },
-  {
-    icon: Medal,
-    title: "Multiple Olympiad Medals",
-    description: "Gold, Silver, Bronze in Mathematics, Science, English, and Computer",
-    color: "#ec4899",
-  },
-  {
-    icon: Crown,
-    title: "Earth House Captain",
-    description: "School leadership position",
-    color: "#22c55e",
-  },
-  {
-    icon: Newspaper,
-    title: "Featured in Times of India NIE",
-    description: "School French Day Assembly coverage",
-    color: "#f97316",
-  },
-  {
-    icon: Mic,
-    title: "Public Speaking & Tech Events",
-    description: "Participated in multiple school tech and speaking competitions",
-    color: "#06b6d4",
-  },
-];
+const iconMap = {
+  trophy: Trophy,
+  medal: Medal,
+  award: Award,
+  star: Star,
+  newspaper: Newspaper,
+  crown: Crown,
+  mic: Mic,
+} as const;
 
 export function Achievements() {
   const ref = useRef(null);
@@ -77,43 +40,45 @@ export function Achievements() {
           transition={{ duration: 0.6 }}
         >
           <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#fbbf24]/20 to-[#f97316]/20 border border-[#fbbf24]/30 text-sm text-[#fbbf24] mb-4">
-            Recognition
+            {achievementsContent.badge}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">
             <span className="bg-gradient-to-r from-[#3b82f6] to-[#a855f7] bg-clip-text text-transparent">
-              Achievements
+              {achievementsContent.heading}
             </span>
           </h2>
           <p className="text-[#94a3b8] max-w-2xl mx-auto">
-            Awards, recognitions, and milestones throughout my journey.
+            {achievementsContent.subtitle}
           </p>
+          <div className="mt-6">
+            <a
+              href={achievementsContent.globalCertificates.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#a855f7] hover:from-[#a855f7] hover:to-[#3b82f6] transition-all duration-300"
+            >
+              <FileText className="w-4 h-4" />
+              <span>{achievementsContent.globalCertificates.label}</span>
+            </a>
+          </div>
         </motion.div>
 
         {/* Achievements grid */}
         <div className="grid md:grid-cols-2 gap-4">
-          {achievements.map((achievement, index) => (
-            <motion.div
+          {achievementsContent.achievements.map((achievement, index) => {
+            const Icon = iconMap[achievement.iconKey as keyof typeof iconMap] ?? Star;
+
+            return (
+              <motion.div
               key={achievement.title}
               initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
-              className={`group relative ${achievement.highlight ? 'md:col-span-2' : ''}`}
+              className="group relative"
             >
               <div
-                className={`relative p-5 rounded-xl bg-gradient-to-br from-[#0d1424] to-[#0a0f1c] border transition-all duration-300 ${
-                  achievement.highlight
-                    ? 'border-[#fbbf24]/30 hover:border-[#fbbf24]/60'
-                    : 'border-[#1e3a5f]/50 hover:border-[#3b82f6]/50'
-                }`}
+                className="relative p-5 rounded-xl bg-gradient-to-br from-[#0d1424] to-[#0a0f1c] border border-[#1e3a5f]/50 hover:border-[#3b82f6]/50 transition-all duration-300 h-full"
               >
-                {/* Highlight badge */}
-                {achievement.highlight && (
-                  <div className="absolute -top-3 left-6">
-                    <span className="px-3 py-1 text-xs font-medium rounded-full bg-gradient-to-r from-[#fbbf24] to-[#f97316] text-[#0a0f1c]">
-                      Featured
-                    </span>
-                  </div>
-                )}
 
                 <div className="flex items-start gap-4">
                   {/* Icon */}
@@ -124,10 +89,7 @@ export function Achievements() {
                       border: `1px solid ${achievement.color}40`,
                     }}
                   >
-                    <achievement.icon
-                      className="w-6 h-6"
-                      style={{ color: achievement.color }}
-                    />
+                    <Icon className="w-6 h-6" style={{ color: achievement.color }} />
                   </div>
 
                   {/* Content */}
@@ -135,9 +97,28 @@ export function Achievements() {
                     <h3 className="text-base font-semibold text-[#f0f4ff] mb-1 group-hover:text-[#00d4ff] transition-colors">
                       {achievement.title}
                     </h3>
-                    <p className="text-sm text-[#64748b]">
+                    <p className="text-sm text-[#64748b] mb-3">
                       {achievement.description}
                     </p>
+
+                    {(achievement.proofUrl || (achievement as any).spacedForProof) && (
+                      <>
+                        {achievement.proofUrl && (
+                          <a
+                            href={achievement.proofUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-sm text-[#94a3b8] hover:text-[#00d4ff] transition-colors"
+                          >
+                            <ExternalLink className="w-4 h-4" />
+                            <span>View Proof</span>
+                          </a>
+                        )}
+                        {!(achievement.proofUrl) && (achievement as any).spacedForProof && (
+                          <div className="h-[22px]" />
+                        )}
+                      </>
+                    )}
                   </div>
                 </div>
 
@@ -147,8 +128,9 @@ export function Achievements() {
                   style={{ backgroundColor: `${achievement.color}10` }}
                 />
               </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

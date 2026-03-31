@@ -288,3 +288,62 @@
 
 *Last Updated: March 29, 2026*
 *Status: Phase 4 Skills Rework Finalized, Ready for Commit*
+
+---
+
+## Phase 5: Achievements Proof System (v2.0.0-alpha.5) (March 2026)
+
+### 5.2 Rename Featured to Highlights
+- Updated achievement badge wording from **Featured** to **Highlights** for clearer section semantics.
+
+### 5.3 Certificate Proof Integration
+- Added a section-level CTA button: **View everything I have achieved** (refined label).
+- Added support for an all-certificates portfolio PDF link.
+- Added per-item **View Proof** buttons for achievements with available proof files:
+  - 3rd Rank – Spectrum Maths Fest
+  - 3rd Rank – Pi-Fest Mathematics Competition
+  - 3rd Rank – Mathematics Competition
+
+### 5.4 Achievement List Refinement
+- Removed "Featured in Times of India NIE" achievement entry (not pursued further).
+- Removed highlight badge from "Times of India NIE – 18 Under 18 Nomination" (now displays as regular achievement).
+- Added `spacedForProof: true` flag to "Multiple Olympiad Medals" and "Earth House Captain" to reserve button space for future proof links.
+- Standardized achievement block heights to maintain visual consistency across grid.
+
+### Content Architecture Upgrade
+- Refactored achievements to be content-driven from `content/achievements.ts`.
+- Added icon mapping keys and optional `proofUrl` fields for cleaner scaling.
+- Added global certificates metadata (`label`, `href`) for the section CTA.
+- Added `spacedForProof` flag to achievements awaiting proof assets.
+
+### Public Asset Structure Added
+- Created certificate storage directories for drop-in assets:
+  - `public/certificates/`
+  - `public/certificates/proofs/`
+- Added `.gitkeep` files to preserve folder structure in git.
+
+### Certificate Assets Update (Current)
+- Added certificate assets to the prepared paths:
+  - `public/certificates/all-certificates.pdf`
+  - `public/certificates/proofs/spectrum-maths-fest.jpg`
+  - `public/certificates/proofs/pi-fest-mathematics.jpg`
+  - `public/certificates/proofs/mathematics-competition-doon.jpg`
+- Uploaded a raw consolidated certificates PDF for now.
+- Certificate ordering/prioritization inside the PDF is deferred to the next version.
+
+### Files Modified
+- `components/achievements.tsx`
+- `content/achievements.ts`
+- `public/certificates/.gitkeep`
+- `public/certificates/proofs/.gitkeep`
+
+### Validation
+- ✅ Achievements section now supports global and item-level proof links.
+- ✅ Highlights badge removed from Times of India NIE nomination.
+- ✅ Achievement cards reserve space for proof buttons without showing them when no proof exists.
+- ✅ No runtime/type errors in modified files.
+
+---
+
+*Last Updated: March 29, 2026*
+*Status: Phase 5 Achievements Refinement Complete, Ready for Commit*
