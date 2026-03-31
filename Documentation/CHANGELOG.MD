@@ -347,3 +347,47 @@
 
 *Last Updated: March 29, 2026*
 *Status: Phase 5 Achievements Refinement Complete, Ready for Commit*
+
+---
+
+## Phase 6: Contact System (v2.0.0-alpha.6) (March 2026)
+
+### 6.1 Keep Email + GitHub
+- Retained the existing two direct contact cards:
+  - Email (`mailto:jagrat.ahuja@live.com`)
+  - GitHub (`https://github.com/jagratahuja`)
+
+### 6.2 Add Minimal Contact Form
+- Added a clean, minimal contact form directly below the contact cards.
+- Added required fields exactly as planned:
+  - Name
+  - Email
+  - Subject
+  - Message
+- Implemented browser-native Formspree submission using endpoint `mvzvrajw` (no backend).
+- Added anti-spam honeypot field (`_gotcha`) and source tagging for message origin tracking.
+- Styled form to match the existing dark gradient visual language of the site.
+- Added mailto fallback link when browser submission fails.
+- Added submission status badges so users can see active mode clearly.
+- Kept user-facing errors generic (no raw provider/internal error details shown).
+
+### 6.3 Route-Based Contact Flow
+- Kept homepage "Email me at" card as direct mailto action.
+- Added a dedicated `/contact` page with the same browser-submit contact form experience.
+- Updated navbar Contact links and "Let's Talk" CTA to route to `/contact`.
+
+### Files Modified
+- `components/contact.tsx`
+- `components/navbar.tsx`
+- `app/contact/page.tsx`
+
+### Validation
+- ✅ No backend dependencies introduced.
+- ✅ All required fields present and marked required.
+- ✅ Browser submissions send directly through Formspree.
+- ✅ Error state includes a direct fallback link to open prefilled email draft.
+
+---
+
+*Last Updated: March 31, 2026*
+*Status: Phase 6 Contact System Implemented, Ready for Publish*

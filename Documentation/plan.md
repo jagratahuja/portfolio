@@ -363,6 +363,8 @@ Replace:
 - StudyOS flagship section
 - Downloadable Python archive
 - Backend integrations
+- Sort certificates by priority
+- Replace direct certificate-only viewing with a dedicated webpage that integrates and presents certificates
 
 ---
 

@@ -10,7 +10,7 @@ const navLinks = [
   { name: "Proof", href: "#proof" },
   { name: "Skills", href: "#skills" },
   { name: "Achievements", href: "#achievements" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -65,7 +65,7 @@ export function Navbar() {
 
           {/* CTA button */}
           <a
-            href="#contact"
+            href="/contact"
             className="hidden md:inline-flex items-center px-5 py-2.5 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#a855f7] hover:from-[#a855f7] hover:to-[#3b82f6] transition-all duration-300"
           >
             {"Let's Talk"}
@@ -100,7 +100,7 @@ export function Navbar() {
                 </a>
               ))}
               <a
-                href="#contact"
+                href="/contact"
                 onClick={() => setIsOpen(false)}
                 className="inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-white rounded-lg bg-gradient-to-r from-[#3b82f6] to-[#a855f7] mt-2"
               >

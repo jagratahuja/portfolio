@@ -1,12 +1,10 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { FormEvent, useRef, useState } from "react";
-import { Mail, Github, ArrowUpRight, Send } from "lucide-react";
+import Link from "next/link";
+import { FormEvent, useState } from "react";
+import { ArrowLeft, Mail, Send } from "lucide-react";
 
-export function Contact() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+export default function ContactPage() {
   const formEndpoint = "https://formspree.io/f/mvzvrajw";
   const [formData, setFormData] = useState({
     name: "",
@@ -48,7 +46,7 @@ export function Contact() {
           subject: formData.subject,
           message: formData.message,
           _gotcha: formData.gotcha,
-          source: "homepage-form",
+          source: "contact-page-form",
         }),
       });
 
@@ -75,95 +73,34 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 px-4">
-      <div className="max-w-4xl mx-auto" ref={ref}>
-        {/* Section header */}
-        <motion.div
-          className="text-center mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-        >
-          <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#3b82f6]/20 to-[#a855f7]/20 border border-[#3b82f6]/30 text-sm text-[#00d4ff] mb-4">
-            Get in Touch
-          </span>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">
-            <span className="bg-gradient-to-r from-[#3b82f6] to-[#a855f7] bg-clip-text text-transparent">
-              {"Let's Connect"}
-            </span>
-          </h2>
-          <p className="text-[#94a3b8] max-w-xl mx-auto">
-            {"Have an idea or want to collaborate? I'd love to hear from you."}
-          </p>
-        </motion.div>
-
-        {/* Contact cards */}
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Email card */}
-          <motion.a
-            href="mailto:jagrat.ahuja@live.com"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="group relative block"
+    <main className="relative min-h-screen px-4 py-24">
+      <div className="max-w-4xl mx-auto">
+        <div className="mb-12">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 text-sm text-[#94a3b8] hover:text-[#00d4ff] transition-colors"
           >
-            <div className="relative p-8 rounded-2xl bg-gradient-to-br from-[#0d1424] to-[#0a0f1c] border border-[#1e3a5f]/50 hover:border-[#3b82f6]/50 transition-all duration-300 overflow-hidden">
-              {/* Background glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#3b82f6]/5 to-[#00d4ff]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
-              <div className="relative flex items-center gap-6">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#3b82f6]/20 to-[#00d4ff]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Mail className="w-8 h-8 text-[#00d4ff]" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm text-[#64748b] mb-1">Email me at</p>
-                  <p className="text-lg font-semibold text-[#f0f4ff] group-hover:text-[#00d4ff] transition-colors flex items-center gap-2">
-                    jagrat.ahuja@live.com
-                    <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.a>
-
-          {/* GitHub card */}
-          <motion.a
-            href="https://github.com/jagratahuja"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="group relative block"
-          >
-            <div className="relative p-8 rounded-2xl bg-gradient-to-br from-[#0d1424] to-[#0a0f1c] border border-[#1e3a5f]/50 hover:border-[#a855f7]/50 transition-all duration-300 overflow-hidden">
-              {/* Background glow */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#a855f7]/5 to-[#ec4899]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
-              <div className="relative flex items-center gap-6">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#a855f7]/20 to-[#ec4899]/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Github className="w-8 h-8 text-[#a855f7]" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-sm text-[#64748b] mb-1">Check out my work</p>
-                  <p className="text-lg font-semibold text-[#f0f4ff] group-hover:text-[#a855f7] transition-colors flex items-center gap-2">
-                    github.com/jagratahuja
-                    <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                  </p>
-                </div>
-              </div>
-            </div>
-          </motion.a>
+            <ArrowLeft className="w-4 h-4" />
+            Back to Home
+          </Link>
         </div>
 
-        {/* Browser user form */}
-        <motion.div
-          className="mt-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.4 }}
-        >
-          <div className="mb-3">
+        <section className="text-center mb-10">
+          <span className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-[#3b82f6]/20 to-[#a855f7]/20 border border-[#3b82f6]/30 text-sm text-[#00d4ff] mb-4">
+            Contact Form
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 font-[family-name:var(--font-space-grotesk)]">
+            <span className="bg-gradient-to-r from-[#3b82f6] to-[#a855f7] bg-clip-text text-transparent">
+              Send a Message
+            </span>
+          </h1>
+          <p className="text-[#94a3b8] max-w-2xl mx-auto">
+            Send directly from your browser. If needed, email-app fallback is still supported.
+          </p>
+        </section>
+
+        <section className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-[#0d1424] to-[#0a0f1c] border border-[#1e3a5f]/50">
+          <div className="mb-4">
             {formEndpoint ? (
               <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs border border-[#22c55e]/40 bg-[#22c55e]/10 text-[#86efac]">
                 <span className="w-2 h-2 rounded-full bg-[#22c55e]" />
@@ -176,11 +113,12 @@ export function Contact() {
               </span>
             )}
           </div>
-          <div className="mb-4 text-sm text-[#94a3b8]">Prefer not to leave your browser? Send a quick message below.</div>
-          <form
-            onSubmit={onSubmit}
-            className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-[#0d1424] to-[#0a0f1c] border border-[#1e3a5f]/50"
-          >
+          <div className="mb-6 inline-flex items-center gap-2 text-sm text-[#94a3b8]">
+            <Mail className="w-4 h-4 text-[#00d4ff]" />
+            Sending to jagrat.ahuja@live.com
+          </div>
+
+          <form onSubmit={onSubmit}>
             <div className="grid md:grid-cols-2 gap-4 mb-4">
               <div>
                 <label htmlFor="contact-name" className="block text-sm text-[#94a3b8] mb-2">
@@ -238,7 +176,7 @@ export function Contact() {
                 id="contact-message"
                 name="message"
                 required
-                rows={5}
+                rows={6}
                 value={formData.message}
                 onChange={(event) => setFormData((prev) => ({ ...prev, message: event.target.value }))}
                 className="w-full px-4 py-3 rounded-xl bg-[#0a1222] border border-[#1e3a5f]/60 text-[#f0f4ff] placeholder:text-[#4b5f7d] focus:outline-none focus:ring-2 focus:ring-[#3b82f6]/40 focus:border-[#3b82f6]/60 transition-colors resize-y"
@@ -256,7 +194,7 @@ export function Contact() {
               className="hidden"
               aria-hidden="true"
             />
-            <input type="hidden" name="source" value="homepage-form" readOnly />
+            <input type="hidden" name="source" value="contact-page-form" readOnly />
 
             <button
               type="submit"
@@ -282,8 +220,8 @@ export function Contact() {
               </div>
             )}
           </form>
-        </motion.div>
+        </section>
       </div>
-    </section>
+    </main>
   );
 }
