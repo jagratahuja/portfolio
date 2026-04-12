@@ -5,10 +5,12 @@ import { Github, Mail, Heart } from "lucide-react";
 
 const navLinks = [
   { name: "About", href: "#about" },
-  { name: "Projects", href: "#projects" },
+  { name: "Projects", href: "/projects" },
+  { name: "Proof", href: "#proof" },
   { name: "Skills", href: "#skills" },
   { name: "Achievements", href: "#achievements" },
-  { name: "Contact", href: "#contact" },
+  { name: "Movie", href: "/movie" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export function Footer() {
@@ -44,9 +46,10 @@ export function Footer() {
               <a
                 key={link.name}
                 href={link.href}
-                className="inline-flex items-center h-10 text-sm text-[#94a3b8] hover:text-[#00d4ff] transition-colors"
+                className="inline-flex items-center h-10 text-sm leading-none text-[#94a3b8] hover:text-[#f0f4ff] transition-colors relative group"
               >
                 {link.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#3b82f6] to-[#a855f7] group-hover:w-full transition-all duration-300" />
               </a>
             ))}
           </motion.nav>
