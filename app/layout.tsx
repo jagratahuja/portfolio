@@ -31,8 +31,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      <body className="font-sans antialiased bg-[#0a0f1c] text-[#f0f4ff] overflow-x-hidden">
+    <html
+      lang="en"
+      className={`${inter.variable} ${spaceGrotesk.variable}`}
+      suppressHydrationWarning
+    >
+      <body
+        className="font-sans antialiased bg-[#0a0f1c] text-[#f0f4ff] overflow-x-hidden"
+        suppressHydrationWarning
+      >
         <ScrollToTopOnLoad />
         {children}
         <Analytics />

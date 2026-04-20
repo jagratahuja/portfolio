@@ -12,6 +12,12 @@ const docs = [
     description: "Storyline of the movie.",
     href: "/movie/STORYLINE.docx",
   },
+  {
+    title: "Movie v1",
+    description: "Reference cut for the movie (1.5 GB) stored in Google Drive.",
+    href: "https://drive.google.com/drive/folders/1nCMqTDDRatJ5zUAPS5EeZ3qrjALFVr7x?usp=sharing",
+    external: true,
+  },
 ];
 
 export default function MoviePage() {
@@ -59,14 +65,25 @@ export default function MoviePage() {
                 </div>
 
                 <div className="flex items-center gap-3">
-                  <a
-                    href={doc.href}
-                    download
-                    className="inline-flex items-center gap-2 rounded-xl border border-[#3b82f6]/40 bg-[#1e3a5f]/40 px-4 py-2.5 text-sm font-medium text-[#f0f4ff] hover:text-[#00d4ff] hover:border-[#00d4ff]/60 transition-colors"
-                  >
-                    <Download className="h-4 w-4" />
-                    Download
-                  </a>
+                  {doc.external ? (
+                    <a
+                      href={doc.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-xl border border-[#14b8a6]/40 bg-[#14b8a6]/10 px-4 py-2.5 text-sm font-medium text-[#5eead4] hover:bg-[#14b8a6]/20 transition-colors"
+                    >
+                      Open Drive Folder
+                    </a>
+                  ) : (
+                    <a
+                      href={doc.href}
+                      download
+                      className="inline-flex items-center gap-2 rounded-xl border border-[#3b82f6]/40 bg-[#1e3a5f]/40 px-4 py-2.5 text-sm font-medium text-[#f0f4ff] hover:text-[#00d4ff] hover:border-[#00d4ff]/60 transition-colors"
+                    >
+                      <Download className="h-4 w-4" />
+                      Download
+                    </a>
+                  )}
                 </div>
               </div>
             </article>
