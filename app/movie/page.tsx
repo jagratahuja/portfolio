@@ -13,8 +13,8 @@ const docs = [
     href: "/movie/STORYLINE.docx",
   },
   {
-    title: "Movie v1",
-    description: "Reference cut for the movie (1.5 GB) stored in Google Drive.",
+    title: "Official Movie Drive Folder",
+    description: "Official Google Drive folder for everything movie related.",
     href: "https://drive.google.com/drive/folders/1nCMqTDDRatJ5zUAPS5EeZ3qrjALFVr7x?usp=sharing",
     external: true,
   },
@@ -72,7 +72,7 @@ export default function MoviePage() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 rounded-xl border border-[#14b8a6]/40 bg-[#14b8a6]/10 px-4 py-2.5 text-sm font-medium text-[#5eead4] hover:bg-[#14b8a6]/20 transition-colors"
                     >
-                      Open Drive Folder
+                      Open Official Folder
                     </a>
                   ) : (
                     <a
