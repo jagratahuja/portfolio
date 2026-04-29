@@ -51,7 +51,7 @@ export default function MoviePage() {
         <section className="mb-10">
           <div className="mb-3 flex items-center justify-center">
             <a
-              href="https://www.youtube.com/watch?v=0pVd_I-F9MA"
+              href="https://www.youtube.com/watch?v=dhZ7-NaB7ZE"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center rounded-xl border border-[#14b8a6]/40 bg-[#14b8a6]/10 px-4 py-2 text-sm font-medium text-[#5eead4] hover:bg-[#14b8a6]/20 transition-colors"
@@ -62,7 +62,7 @@ export default function MoviePage() {
           <div className="mb-3 flex items-center justify-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-[#14b8a6]/40 bg-[#14b8a6]/12 px-4 py-1.5 text-xs uppercase tracking-[0.14em] text-[#5eead4]">
               <span className="h-2 w-2 rounded-full bg-[#5eead4] animate-pulse" />
-              Now Playing: Movie v1
+              Now Playing: Movie v2
             </span>
           </div>
           <div className="relative rounded-3xl border border-[#1e3a5f]/60 bg-gradient-to-br from-[#0d1424] via-[#0b1a31] to-[#070d1a] p-3 md:p-4 shadow-[0_0_0_1px_rgba(59,130,246,0.12),0_30px_80px_rgba(2,8,23,0.9)] overflow-hidden">
@@ -71,8 +71,8 @@ export default function MoviePage() {
               <div className="aspect-video w-full overflow-hidden rounded-xl border border-[#14b8a6]/30 bg-black">
                 <iframe
                   className="h-full w-full"
-                  src="https://www.youtube.com/embed/0pVd_I-F9MA?si=vx0gQXX83wHuV_dz&vq=hd1080&hd=1&rel=0&playsinline=1"
-                  title="Movie v1"
+                  src="https://www.youtube.com/embed/dhZ7-NaB7ZE?si=vx0gQXX83wHuV_dz&vq=hd1080&hd=1&rel=0&playsinline=1"
+                  title="Movie v2"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
                   allowFullScreen
@@ -81,7 +81,7 @@ export default function MoviePage() {
             </div>
           </div>
           <div className="mt-3 flex flex-col items-center gap-2">
-            <p className="text-center text-sm text-[#94a3b8]">Movie v1 reference screen</p>
+            <p className="text-center text-sm text-[#94a3b8]">Movie v2 reference screen</p>
           </div>
         </section>
 
